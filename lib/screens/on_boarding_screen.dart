@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:kalikay_app/home_screen.dart';
+import 'package:kalikay_app/screens/home_screen.dart';
 
 class OnBoardingPage extends StatefulWidget {
   const OnBoardingPage({Key? key}) : super(key: key);
@@ -38,13 +38,13 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
     const bodyStyle = TextStyle(fontSize: 19.0);
 
     const pageDecoration = PageDecoration(
-        titleTextStyle: TextStyle(fontSize: 28.0, fontWeight: FontWeight.w700),
+        titleTextStyle: TextStyle(
+            fontSize: 28.0, fontWeight: FontWeight.w700, color: Colors.black87),
         bodyTextStyle: bodyStyle,
         descriptionPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
-        pageColor: Colors.white,
         imagePadding: EdgeInsets.zero,
-        bodyAlignment: Alignment.centerLeft);
-
+        bodyAlignment: Alignment.centerLeft,
+        pageColor: Colors.white);
     return IntroductionScreen(
       key: introKey,
       globalBackgroundColor: Colors.white,
@@ -53,7 +53,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           title: "Bienvenido a Kalikay",
           body:
               "Instead of having to buy an entire share, invest any amount you want.",
-          image: _buildImage('img1.jpg'),
+          image: _buildImage('Welcome-cuate.png'),
           decoration: pageDecoration,
         ),
         PageViewModel(

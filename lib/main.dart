@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:kalikay_app/on_boarding_screen.dart';
+import 'package:kalikay_app/screens/on_boarding_screen.dart';
 
 void main() => runApp(const App());
 
@@ -17,6 +17,7 @@ class App extends StatelessWidget {
       title: 'Introduction screen',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        fontFamily: 'Inter',
         primarySwatch: Colors.brown,
         primaryColor: Colors.yellow,
       ),
