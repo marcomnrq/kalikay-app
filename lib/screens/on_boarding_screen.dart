@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
@@ -14,18 +15,8 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
   final introKey = GlobalKey<IntroductionScreenState>();
 
   void _onIntroEnd(context) {
-    Navigator.of(context).push(
+    Navigator.of(context).pushReplacement(
       MaterialPageRoute(builder: (_) => const Home()),
-    );
-  }
-
-  Widget _buildFullscrenImage() {
-    return Image.asset(
-      'assets/fullscreen.jpg',
-      fit: BoxFit.cover,
-      height: double.infinity,
-      width: double.infinity,
-      alignment: Alignment.center,
     );
   }
 
@@ -43,6 +34,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         bodyTextStyle: bodyStyle,
         descriptionPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
         imagePadding: EdgeInsets.zero,
+        imageAlignment: Alignment.center,
         bodyAlignment: Alignment.centerLeft,
         pageColor: Colors.white);
     return IntroductionScreen(
@@ -52,8 +44,8 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         PageViewModel(
           title: "Bienvenido a Kalikay",
           body:
-              "Instead of having to buy an entire share, invest any amount you want.",
-          image: _buildImage('Welcome-cuate.png'),
+              "Make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
+          image: _buildImage('img1.jpg'),
           decoration: pageDecoration,
         ),
         PageViewModel(
@@ -69,18 +61,6 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
               "Kids and teens can track their stocks 24/7 and place trades that you approve.",
           image: _buildImage('img3.jpg'),
           decoration: pageDecoration,
-        ),
-        PageViewModel(
-          title: "Full Screen Page",
-          body:
-              "Pages can be full screen as well.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id euismod lectus, non tempor felis. Nam rutrum rhoncus est ac venenatis.",
-          image: _buildFullscrenImage(),
-          decoration: pageDecoration.copyWith(
-            contentMargin: const EdgeInsets.symmetric(horizontal: 16),
-            fullScreen: true,
-            bodyFlex: 2,
-            imageFlex: 3,
-          ),
         ),
         PageViewModel(
           title: "Another title page",
@@ -130,7 +110,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       nextFlex: 0,
       //rtl: true, // Display as right-to-left
       skip: const Text('Omitir'),
-      next: const Icon(Icons.arrow_forward),
+      next: const Icon(CupertinoIcons.arrow_right),
       done: const Text('Siguiente',
           style: TextStyle(fontWeight: FontWeight.w600)),
       curve: Curves.fastLinearToSlowEaseIn,
@@ -140,14 +120,14 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           : const EdgeInsets.fromLTRB(8.0, 4.0, 8.0, 4.0),
       dotsDecorator: const DotsDecorator(
         size: Size(10.0, 10.0),
-        color: Color.fromRGBO(198, 127, 67, 100),
+        color: Colors.white,
         activeSize: Size(22.0, 10.0),
         activeShape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(25.0)),
         ),
       ),
       dotsContainerDecorator: const ShapeDecoration(
-        color: Color.fromRGBO(212, 155, 126, 100),
+        color: Color.fromRGBO(50, 60, 90, 30),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(8.0)),
         ),

@@ -18,7 +18,6 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: 'Inter',
-        primarySwatch: Colors.brown,
         primaryColor: Colors.yellow,
       ),
       home: const OnBoardingPage(),
